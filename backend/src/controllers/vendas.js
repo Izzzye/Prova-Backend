@@ -25,6 +25,7 @@ const listar = (req, res) => {
 
 const alterar = (req, res) => {
     let vendas = new Vendas(req.body)
+    console.log(vendas.update());
     con.query(vendas.update(), (err, result) => {
         if (result.affectedRows > 0)
             res.status(202).end()

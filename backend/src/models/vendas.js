@@ -9,7 +9,7 @@ class Vendas {
     }
 
     create() {
-        return `INSERT INTO vendas VALUE('${this.id}','${this.data}',${this.quantidade}, ${this.produtoId}, ${this.vendedorId})`
+        return `INSERT INTO vendas VALUE('${this.id}', curdate(), ${this.quantidade}, ${this.produtoId}, ${this.vendedorId})`
     }
 
     read() {
@@ -28,7 +28,7 @@ class Vendas {
     }
 
     vendas() {
-        return `SELECT ve.data, p.nome AS nomeProduto, v.nome AS nomeVendedor
+        return `SELECT ve.id, ve.data, ve.quantidade, p.nome AS nomeProduto, v.nome AS nomeVendedor
         FROM vendas ve
         INNER JOIN produtos p ON ve.produtoId = p.id
         INNER JOIN vendedores v ON ve.vendedorId = v.id`

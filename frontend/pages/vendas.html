@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/vendas.css">
+    <link rel="shortcut icon" href="../assets/ae32c5ed9ed6e22248199e35881b4687.gif" type="image/x-icon">
+    <title>Vendas</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Cadastro de Vendas</h1>
+        <button onclick="modal1.classList.remove('oculto')">Nova Venda</button>
+        <a href="../pages/vendedores.html"><button>Vendedores</button></a>
+        <div id="modal1" class="modal1 oculto">
+            <form id="novo">
+                <header style="grid-column-end: span 2;">
+                    <h1>Cadastro de Vendas</h1>
+                </header>
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" name="quantidade" id="quantidade" placeholder="Digite a quantidade" required>
+                <label for="produtoId">Digite o ID do produto:</label>
+                <input type="number" name="produtoId" id="produtoId" required>
+                <label for="vendedorId">Digite o ID do vendedor:</label>
+                <input type="number" name="vendedorId" id="vendedorId" required>
+                <input type="reset" value="Cancelar" onclick="modal1.classList.add('oculto')">
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <th>Data</th>
+                <th>Quantidade</th>
+                <th>Produto</th>
+                <th>Vendedor</th>
+                <th>Atualizar</th>
+                <th>Excluir</th>
+            </thead>
+            <tbody id="corpo"></tbody>
+        </table>
+    </main>
+</body>
+<script src="../scripts/vendas.js"></script>
+</html>
